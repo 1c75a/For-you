@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For you, Ma'am Roan!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="daisy-background" id="daisyBackground"></div>
+
+    <div class="container">
+        <h1>Ma'am, mami-miss mo ba kami?</h1>
+        <div class="button-container">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        <img id="daisy" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f33c.svg" alt="Daisy Flower">
+    </div>
+
+    <div id="customModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalDaisy" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f33c.svg" alt="Daisy Flower" style="max-width: 100px; margin-bottom: 20px; filter: saturate(150%) hue-rotate(300deg);">
+            <div class="modal-message">
+                We will miss you rin po!<br><br>
+                You've changed our perception of school from something negative
+                into a memory that we will always want to look back on—a teacher who comforts us and makes us feel less pressured by academics.
+                I will be always grateful to have met such an amazing teacher like you along the way.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

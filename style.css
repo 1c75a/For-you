@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes floatDaisy {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes bloom {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+body {
+    font-family: 'Pixelify Sans', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: 
+        linear-gradient(45deg, 
+            rgba(0,0,0,0.02) 25%, 
+            transparent 25%, 
+            transparent 50%, 
+            rgba(0,0,0,0.02) 50%, 
+            rgba(0,0,0,0.02) 75%, 
+            transparent 75%, 
+            transparent
+        );
+    background-size: 40px 40px;
+    overflow: hidden;
+    color: #333;
+    position: relative;
+}
+
+.daisy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.pixel-daisy {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: floatDaisy 5s infinite ease-in-out;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 
+        0 4px 6px rgba(0,0,0,0.1),
+        0 1px 3px rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    border: 2px solid #e0e0e0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    height: 60px;
+}
+
+button {
+    font-family: 'Pixelify Sans', cursive;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+    color: #333;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+#yesButton {
+    background-color: #ff69b4;
+    color: white;
+    border-color: #ff1493;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+#daisy {
+    display: none;
+    max-width: 200px;
+    margin-top: 20px;
+    animation: bloom 1s ease-out;
+    filter: saturate(150%) hue-rotate(300deg);
+}
+
+#customModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.1),
+        0 6px 6px rgba(0,0,0,0.08);
+    border: 2px solid #ff69b4;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ff1493;
+    user-select: none;
+}
+
+.modal-message {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.5;
+}
